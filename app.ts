@@ -6,6 +6,7 @@ import deleteContact from './db/contact_operations/delete';
 import addContact from './db/contact_operations/add';
 import updateContact from './db/contact_operations/update';
 import getContacts from './db/contact_operations/get';
+import getUser from './db/user_operations/get';
 //import Blog from './db/model/blog';
 
 
@@ -81,3 +82,8 @@ app.get('/update-contact', async (req, res) => {
   res.send('Update contact')
 })
 
+
+app.get('/get-user', async (req, res) => {
+  await getUser('e1', 'pass1');
+  res.send("get user")
+})
